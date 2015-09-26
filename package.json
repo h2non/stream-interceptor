@@ -1,6 +1,6 @@
 {
   "name": "stream-interceptor",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Intercept, modify and ignore chunks data and events in any readable stream",
   "repository": "h2non/stream-interceptor",
   "author": "Tomas Aparicio",

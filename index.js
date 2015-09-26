@@ -6,7 +6,8 @@ var Interceptor = require('./lib/interceptor')
 exports = module.exports = streamInterceptor
 
 function streamInterceptor(stream) {
-  Object.keys(Interceptor.prototype)
+  Object
+  .keys(Interceptor.prototype)
   .forEach(function (key) {
     stream[key] = Interceptor.prototype[key]
   })

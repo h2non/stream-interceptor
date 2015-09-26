@@ -1,6 +1,6 @@
-# stream-interceptor
+# stream-interceptor [![Build Status](https://api.travis-ci.org/h2non/stream-interceptor.svg?branch=master&style=flat)](https://travis-ci.org/h2non/stream-interceptor) [![NPM](https://img.shields.io/npm/v/stream-interceptor.svg)](https://www.npmjs.org/package/stream-interceptor)
 
-Tiny [node.js](https://nodejs.org) module to **intercept**, **modify** and/or **ignore** chunks of data and events in any [readable compatible stream](https://nodejs.org/api/stream.html#stream_class_stream_readable) before it's being processed by other stream consumers (e.g: via `pipe()`).
+Tiny [node.js](https://nodejs.org) module to **intercept**, **modify** and/or **ignore** chunks of data and events in any [readable compatible stream](https://nodejs.org/api/stream.html#stream_class_stream_readable) before it's processed by other stream consumers (e.g: via `pipe()`).
 
 It becomes particularly useful when dealing with net/http/fs streams.
 

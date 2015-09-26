@@ -1,8 +1,8 @@
 {
-  "name": "interceptor-stream",
+  "name": "stream-interceptor",
   "version": "0.1.0",
-  "description": "Intercept, modify and handle the control flow of data chunks emitter by a readable stream",
-  "repository": "h2non/interceptor-stream",
+  "description": "Intercept and modify data chunks and events in any readable stream",
+  "repository": "h2non/stream-interceptor",
   "author": "Tomas Aparicio",
   "license": "MIT",
   "keywords": [
@@ -11,7 +11,16 @@
     "interceptor",
     "control",
     "modify",
-    "capture"
+    "capture",
+    "sniff",
+    "sniffer",
+    "spy",
+    "events",
+    "emitter",
+    "readable",
+    "pipe",
+    "http",
+    "transform"
   ],
   "engines": {
     "node": ">= 0.12"

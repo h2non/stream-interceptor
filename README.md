@@ -158,6 +158,11 @@ stream.capture(function (chunk, next) {
   next(chunk + chunk + '\n')
 })
 
+// Push chunks to the stream
+stream.push('Foo')
+stream.push('Bar')
+stream.push(null) // we're done!
+
 stream.pipe(process.stdout)
 ```
 

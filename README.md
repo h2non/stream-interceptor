@@ -124,7 +124,7 @@ stream._read = function () { /* ... */ }
 // Make it interceptable
 interceptor(stream)
 
-// Prepare to capture chunks asyncronously
+// Prepare to capture chunks
 stream.capture(function (chunk, next) {
   if (chunk === 'Bad') {
     return next(true) // Ignore chunk

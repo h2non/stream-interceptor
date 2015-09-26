@@ -2,7 +2,7 @@
 
 Tiny [node.js](https://nodejs.org) module to **intercept**, **modify** and/or **ignore** chunks of data and events in any [readable compatible stream](https://nodejs.org/api/stream.html#stream_class_stream_readable) before it's processed by other stream consumers (e.g: via `pipe()`).
 
-It becomes particularly useful when dealing with net/http/fs streams.
+It becomes particularly useful to deal with net/http/fs streams.
 
 ## Installation
 

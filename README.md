@@ -161,6 +161,40 @@ stream.capture(function (chunk, next) {
 stream.pipe(process.stdout)
 ```
 
+##### Event interceptor
+
+```js
+var Interceptable = require('stream-interceptor').Interceptable
+
+// Implements both Readable and Interceptable stream
+var stream = new Interceptable
+stream._read = function () { /* ... */ }
+
+// Prepate to capture events
+stream.captureEvent('error', function (err, next) {
+  next(true) // always ignore errors
+})
+
+// Prepate to capture chunks
+stream.capture(function (chunk, next) {
+  next(chunk + chunk + '\n')
+})
+
+stream.on('error', function (err) {
+  console.error('Error:', err) // won't be called
+})
+
+// Push data in the stream
+stream.push('Foo')
+stream.push('Bar')
+stream.push(null)
+
+// Simulate an error
+stream.emit('error', 'Damn!')
+
+stream.pipe(process.stdout)
+```
+
 ## API
 
 ### streamIntercept(readableStream) => Interceptable
@@ -169,6 +203,7 @@ Wraps any readable stream turning it an interceptable stream.
 `Interceptable` stream implements the same interface as `Readable`.
 
 ### Interceptable([ options ])
+Alias: `Interceptor`
 
 Creates a new `Interceptable` stream. Inherits from `Readable` stream.
 
@@ -188,6 +223,20 @@ Capture data emitted by a specific event.
 When you're done, **you must call the callback** passing the new argument: `callback(chunk)`
 
 You can optionally ignore chunks passing `true` to the callback: `callback(true)`.
+
+### isInterceptor(stream) => `boolean`
+
+### Hook()
+
+Hook layer internally used capture and handle events of the stream.
+
+### Queue()
+
+FIFO queue implementation internally used.
+
+### Chunk()
+
+Internal chunk event structure.
 
 ## License
 

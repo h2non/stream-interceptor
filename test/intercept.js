@@ -92,7 +92,7 @@ suite('intercept', function () {
 
     var delay = 10
     var now = Date.now()
-    stream.captureEvent('end', function (_, next) {
+    stream.captureEvent('end', function (next) {
       setTimeout(next, 10)
     })
 

@@ -23,6 +23,7 @@ exports.Chunk = Chunk
 exports.Queue = Queue
 exports.Interceptor =
 exports.Interceptable = Interceptable
+exports.isInterceptor = isInterceptor
 
 function isInterceptor(stream) {
   return Interceptable.prototype.isIntercepting === stream.isIntercepting
